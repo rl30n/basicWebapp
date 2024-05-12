@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>¡Comparte tus recetas!</title>
+    <style>
+        /* recipe_success.css */
+        
+        body {
+          font-family: sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #f8f8f8;
+        }
+        
+        h1 {
+          text-align: center;
+          color: #333;
+          margin-bottom: 20px;
+        }
+        
+        p {
+          text-align: center;
+          color: #666;
+          line-height: 1.5;
+        }
+        
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 20px auto;
+          width: 80%;
+          max-width: 500px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+        }
+        
+        li {
+          padding: 10px;
+          border-bottom: 1px solid #eee;
+        }
+        
+        li:last-child {
+          border-bottom: none;
+        }
+        
+        li strong {
+          display: block;
+          margin-bottom: 5px;
+          color: #333;
+        }
+        
+        .link {
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        
+        .link:hover {
+          background-color: #45a049;
+        }
+        
+        </style>
+</head>
+<body>
+
+
+    <header>
+        <h1>¡Comparte tus recetas deliciosas!</h1>
+        <p>¿Te encanta cocinar y compartir tus creaciones culinarias? ¡Esta es tu app!</p>
+    </header>
+
+    <main>
+        <div class="search">
+            <h1>¡Bienvenido al buscador!</h1>
+            <form action="/search" method="post">
+                <input type="text" name="search_term" placeholder="Ingresa tu término de búsqueda">
+                <button type="submit">Buscar</button>
+            </form>        
+
+        </div>
+
+        <div class="hero">
+            <img src="recipe-hero.jpg" alt="Imagen de una deliciosa receta">
+            <div class="hero-text">
+                <h2>¿Listo para escribir tu receta?</h2>
+                <a href="basicform.py" class="btn">¡Comienza a escribir!</a>
+            </div>
+        </div>
+
+        <section class="features">
+            <h2>¿Qué ofrece nuestra app?</h2>
+            <ul>
+                <li>Crea y guarda tus recetas favoritas</li>
+                <li>Organiza tus recetas por categorías</li>
+                <li>Comparte tus recetas con amigos y familiares</li>
+                <li>Busca recetas por ingredientes o nombre</li>
+                <li>¡Y mucho más!</li>
+            </ul>
+        </section>
+
+        <section class="testimonials">
+            <h2>¿Qué dicen nuestros usuarios?</h2>
+            <div class="testimonial">
+                <p>"¡Esta app me ha ayudado a organizar todas mis recetas! Es fácil de usar y tiene muchas funciones útiles." - Ana M.</p>
+            </div>
+            <div class="testimonial">
+                <p>"¡Me encanta poder compartir mis recetas con mi familia y amigos! Es una forma divertida de conectar con ellos." - Juan C.</p>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>¡Comienza a compartir tus recetas hoy mismo!</h2>
+            <a href="basicform.py" class="btn">¡Comienza a escribir!</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tu nombre o el nombre de tu app</p>
+    </footer>
+</body>
+</html>

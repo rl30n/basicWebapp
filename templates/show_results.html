@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>¡Receta encontrada!</title>
+    <style>
+        /* recipe_success.css */
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>¡Receta encontrada con éxito!</h1>
+
+    <p>Gracias por buscar tu receta, {{ title }}</p>
+
+    {% for resultado in results %}
+    <ul>
+        <li>Título: {{ resultado.titulo }}</li>
+        <li>Ingredientes: {{ resultado.ingredientes_text }}</li>
+        <li>Número de personas: {{ resultado.personas }}</li>
+        <li>Instrucciones: {{ resultado.preparacion }}</li>
+        <li>Calorías: {{ resultado.kcal }}</li>
+        <li>Carbohidratos: {{ resultado.carbohidrato_gr }}</li>
+        <li>Grasas: {{ resultado.grasas_gr }}</li>
+        <li>Proteínas: {{ resultado.proteina_gr }}</li>
+        <li>Categoría: {{ resultado.categoria }}</li>
+        <li>Dificultad: {{resultado.dificultad}}</li>
+
+    </ul>    {% endfor %}
+
+
+    <p><a href="#">Ver detalles de la receta</a></p>
+
+    <p>¡Disfruta de tu receta!</p>
+</body>
+
+</html>

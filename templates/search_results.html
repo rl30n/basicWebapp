@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>¡Receta enviada!</title>
+<style>
+/* recipe_success.css */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  color: #666;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 500px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.link:hover {
+  background-color: #45a049;
+}
+
+</style>
+</head>
+<body>
+    <h1>¡Receta enviada con éxito!</h1>
+
+    <p>Gracias por enviar tu receta, {{ title }}</p>
+
+    <p>Los detalles de tu receta se han recibido correctamente:</p>
+
+    <ul>
+        <li>Título: {{ titulo }}</li>
+        <li>Ingredientes: {{ ingredientes_text }}</li>
+        <li>Número de personas: {{ personas }}</li>
+        <li>Instrucciones: {{ preparacion }}</li>
+        <li>Calorías: {{ kcal }}</li>
+        <li>Carbohidratos: {{ carbohidrato_gr }}</li>
+        <li>Grasas: {{ grasas_gr }}</li>
+        <li>Proteínas: {{ proteina_gr }}</li>
+        <li>Categoría: {{ categoria }}</li>
+        <li>Dificultad: {{dificultad}}</li>
+
+    </ul>
+
+    <p><a href="#">Ver detalles de la receta</a></p>
+
+    <p>¡Disfruta de tu receta!</p>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de receta</title>
+    <style>
+        /* Estilos CSS para el formulario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Formulario de receta</h1>
+    <form action="/" method="POST">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="ingredientes_text">Ingredientes:</label>
+        <textarea id="ingredientes_text" name="ingredientes_text" rows="5" required></textarea>
+
+        <label for="personas">Número de personas:</label>
+        <input type="number" id="personas" name="personas" min="1" required>
+
+        <label for="preparacion">Instrucciones:</label>
+        <textarea id="preparacion" name="preparacion" rows="10" required></textarea>
+
+        <label for="kcal">Calorías:</label>
+        <input type="number" id="kcal" name="kcal" required>
+
+        <label for="carbohidrato_gr">Carbohidratos:</label>
+        <input type="number" id="carbohidrato_gr" name="carbohidrato_gr" required step="0.01">
+
+        <label for="grasas_gr">Grasas:</label>
+        <input type="number" id="grasas_gr" name="grasas_gr" required step="0.01">
+
+        <label for="proteina_gr">Proteínas:</label>
+        <input type="number" id="proteina_gr" name="proteina_gr" required step="0.01">
+
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="">Seleccionar</option>
+            <option value="comida">Comida</option>
+            <option value="cena">Cena</option>
+            <option value="desayuno">Desayuno</option>
+            <option value="snack">Snack</option>
+            <option value="merienda">Merienda</option>
+        </select>
+        <button type="button" id="seleccionarCategorias">Seleccionar Múltiples</button>
+        <script>
+            const seleccionarCategoriasBtn = document.getElementById('seleccionarCategorias');
+            const categoriaSelect = document.getElementById('categoria');
+
+            seleccionarCategoriasBtn.addEventListener('click', () => {
+                categoriaSelect.setAttribute('multiple', true);
+            });
+
+        </script>
+        <label for="dificultad">Dificultad:</label>
+        <select id="dificultad" name="dificultad" required>
+            <option value="facil">Fácil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Difícil</option>
+        </select>∫
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
