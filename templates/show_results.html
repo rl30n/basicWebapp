@@ -72,27 +72,41 @@
 <body>
     <h1>¡Receta encontrada con éxito!</h1>
 
-    <p>Gracias por buscar tu receta, {{ title }}</p>
+    <p>Recetas encontradas</p>
 
-    {% for resultado in results %}
-    <ul>
-        <li>Título: {{ resultado.titulo }}</li>
-        <li>Ingredientes: {{ resultado.ingredientes_text }}</li>
-        <li>Número de personas: {{ resultado.personas }}</li>
-        <li>Instrucciones: {{ resultado.preparacion }}</li>
-        <li>Calorías: {{ resultado.kcal }}</li>
-        <li>Carbohidratos: {{ resultado.carbohidrato_gr }}</li>
-        <li>Grasas: {{ resultado.grasas_gr }}</li>
-        <li>Proteínas: {{ resultado.proteina_gr }}</li>
-        <li>Categoría: {{ resultado.categoria }}</li>
-        <li>Dificultad: {{resultado.dificultad}}</li>
-
-    </ul>    {% endfor %}
+    <table>
+        <tr>
+            {% for campo in results %}
+            <ul>
+                <li>Título: {{ campo.titulo }}</li>
+                <li>Calorías: {{ campo.kcal }}</li>
+                <li>Carbohidratos: {{ campo.carbohidrato_gr }}</li>
+                <li>Grasas: {{ campo.grasas_gr }}</li>
+                <li>Proteínas: {{ campo.proteina_gr }}</li>
+                <li>Categoría: {{ campo.categoria }}</li>
+                <li>Dificultad: {{ campo.dificultad}}</li>
+                <li> <a href="#">Ver detalles de la receta</a></p>
+                </li>
+            </ul>
+            {% endfor %}
+        </tr>
+        <!-- {% for resultado in results %}
+            <tr>
+                {% for campo in results %}
+                    <td>{{ resultado[campo] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %} -->
+    </table>
+    
 
 
     <p><a href="#">Ver detalles de la receta</a></p>
 
     <p>¡Disfruta de tu receta!</p>
+    <a href="{{ url_for('index') }}">Volver al índice</a>
+
+
 </body>
 
 </html>

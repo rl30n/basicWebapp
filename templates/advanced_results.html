@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador Avanzado</title>
+
+</head>
+
+<body>
+    <h1>Buscador Avanzado</h1>
+
+    <p>Usa filtros</p>
+
+    <table>
+        <tr>
+            {% for campo in results %}
+            <ul>
+                    {{campo}}
+            </ul>
+            {% endfor %}
+        </tr>
+        <!-- {% for resultado in results %}
+            <tr>
+                {% for campo in results %}
+                    <td>{{ resultado[campo] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %} -->
+    </table>
+    <div class="search">
+        <h1>¡Bienvenido al buscador!</h1>
+        <form action="/search" method="post">
+            <input type="text" name="advanced_search_term" placeholder="Ingresa tu término de búsqueda">
+            <button type="submit">Buscar</button>
+        </form>        
+
+    </div>
+
+
+
+    <p>¡Disfruta de tu receta!</p>
+    <a href="{{ url_for('index') }}">Volver al índice</a>
+    <a href="{{ url_for('advanced_search') }}">Nueva Búsqueda</a>
+
+
+</body>
+
+</html>
